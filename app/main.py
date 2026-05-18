@@ -12,4 +12,9 @@ app.include_router(trips_router)
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the Ride Share API!"}
-    
+
+
+@app.on_event("startup")
+async def startup():
+    from app.core.database import engine, create_tables
+    await create_tables(engine)

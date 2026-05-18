@@ -2,3 +2,6 @@ numpy
 uvicorn
 fastapi
 pydantic-settings
+sqlalchemy 
+asyncpg
+alembic
