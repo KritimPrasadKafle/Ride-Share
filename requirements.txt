@@ -5,3 +5,5 @@ pydantic-settings
 sqlalchemy 
 asyncpg
 alembic
+psycopg2-binary
+postgres
