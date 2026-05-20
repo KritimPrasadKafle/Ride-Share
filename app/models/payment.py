@@ -8,7 +8,7 @@ from sqlalchemy import Enum, ForeignKey, Numeric, String, Text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
-from app.models.base import BaseModel
+from app.models.base import Base
 
 
 class PaymentStatus(str, enum.Enum):
@@ -26,7 +26,7 @@ class PaymentMethod(str, enum.Enum):
     CARD   = "CARD"
 
 
-class Payment(BaseModel):
+class Payment(Base):
     __tablename__ = "payments"
 
     # ── References ─────────────────────────────────────

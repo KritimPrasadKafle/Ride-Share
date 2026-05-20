@@ -1,9 +1,8 @@
 
 from decimal import Decimal
 from datetime import datetime
-from sqlalchemy import String, Integer, Boolean, Numeric, TIMESTAMP
+from sqlalchemy import String, Integer, Boolean, Numeric, TIMESTAMP, CheckConstraint
 from sqlalchemy.orm import Mapped, mapped_column   
-
 from app.models.base import Base
 
 class Rider(Base):

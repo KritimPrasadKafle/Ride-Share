@@ -8,6 +8,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from app.models.base import BaseModel
 
 
+
 class TripRating(BaseModel):
     __tablename__ = "trip_ratings"
     __table_args__ = (

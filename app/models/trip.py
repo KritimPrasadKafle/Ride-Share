@@ -1,6 +1,14 @@
+from decimal import Decimal
+from datetime import datetime
+from sqlalchemy import String, Integer, Boolean, Numeric, TIMESTAMP, CheckConstraint, ForeignKey
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from app.models.base import Base
+from app.models.rider import Rider
+from app.models.driver import Driver
+from app.models.vehicle import Vehicle, VehicleType
+import enum
 
-
-class TripStatus(str, Enum):
+class TripStatus(str, enum.Enum):
     REQUESTED = 'requested'
     DRIVER_ASSIGNED = 'driver_assigned'
     DRIVER_EN_ROUTE = 'driver_en_route'

@@ -3,10 +3,9 @@ from datetime import datetime
 from sqlalchemy import String, Integer, Boolean, Numeric, TIMESTAMP, CheckConstraint, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.models.base import Base
-from enum import Enum
+import enum
 
-
-class VehicleType(str, Enum):
+class VehicleType(str, enum.Enum):
     SEDAN = 'sedan'
     SUV = 'suv'
     HATCHBACK = 'hatchback'

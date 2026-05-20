@@ -3,7 +3,7 @@ from datetime import datetime
 from sqlalchemy import String, Integer, Boolean, Numeric, TIMESTAMP, CheckConstraint
 from sqlalchemy.orm import Mapped, mapped_column
 from app.models.base import Base
-from enum import Enum
+import enum
 
 class DriverStatus(str, enum.Enum):
     AVAILABLE = 'available'
@@ -14,7 +14,7 @@ class Driver(Base):
     __tablename__ = "drivers"
     __table_args__ = (
         CheckConstraint('rating >= 1.00 AND rating <= 5.00', name='driver_rating_range_check'),
-        CheckConstraint('acceptannce_rate >= 0 AND acceptance_rate <= 100', name='acceptance_rate_range_check'),
+        CheckConstraint('acceptance_rate >= 0 AND acceptance_rate <= 100', name='acceptance_rate_range_check'),
     )
     
 
